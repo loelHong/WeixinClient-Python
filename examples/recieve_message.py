@@ -5,7 +5,7 @@ if __name__ == '__main__':
     helper.wait_until_login()
 
     @helper.message("chat")
-    def recieve_message(topic, message):
+    def receive_message(topic, message):
         print(message)
 
     helper.run_forever()

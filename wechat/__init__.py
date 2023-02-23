@@ -2,6 +2,7 @@ import time, json, logging, threading, re
 from .log import set_logging
 from WexinClient_Python import WeixinClient
 import xmltodict
+
 logger = logging.getLogger('wechat')
 
 TEXT = 0x01
@@ -10,6 +11,7 @@ VOICE = 0x22
 CARD = 0x2A
 ARTICLE = 0x1F
 SYSTEM = 0x2710
+
 
 class TryAgain(RuntimeError): ...
 
@@ -40,6 +42,7 @@ class WechatHelper(WeixinClient):
         def stranger(topic, payload):
             self.add_friend(15, payload["v3"], remark)
             self.remove_listener("stranger", stranger)
+
         self.register_listener("stranger", stranger)
         self.find_stranger(mobile)
 
@@ -63,11 +66,12 @@ class WechatHelper(WeixinClient):
 
     def listen(self, endpoint):
         def register(func):
-            self.remove_listener(endpoint, func)
+            self.register_listener(endpoint, func)
+
         return register
 
-
-    def message(self, endpoint: str, msgtype=[CARD, TEXT, PICTURE, VOICE, ARTICLE, SYSTEM], keywords=[], atuserlist=[], filter_self_send=True):
+    def message(self, endpoint: str, msgtype=[CARD, TEXT, PICTURE, VOICE, ARTICLE, SYSTEM], keywords=[], atuserlist=[],
+                filter_self_send=True):
         if not endpoint.startswith("chat"):
             raise Exception("unknown topic!")
         if not (isinstance(msgtype, list) or isinstance(msgtype, tuple)):
