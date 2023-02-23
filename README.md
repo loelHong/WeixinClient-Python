@@ -15,7 +15,7 @@ pip install .
 > weixin_server.exe --port1 10086 --port2 10010
 ```
 
-编写python脚本，与微信服务端通信
+编写python代码，与微信服务端通信
 
 ```
 from wechat import WechatHelper
@@ -33,4 +33,11 @@ helper.run_forever()
 
 ```
 
-
+## 示例
+TODO 
+1. 接收消息
+2. 发送消息
+3. 查询好友
+4. 添加好友
+5. 获取群成员
+6. 获取通讯录
