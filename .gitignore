@@ -1,0 +1,6 @@
+build
+wechat.egg-info
+*/**/__pycache__
+cmake-build-*
+.idea
+venv
