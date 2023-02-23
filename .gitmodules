@@ -1,7 +1,0 @@
-[submodule "lib/WeixinClient"]
-	path = lib/WeixinClient
-	url = git@e.coding.net:malimali/robot/WeixinClient.git
-	branch = remove_python
-[submodule "lib/pybind11"]
-	path = lib/pybind11
-	url = git@e.coding.net:malimali/robot/pybind11.git
