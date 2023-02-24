@@ -3,13 +3,13 @@
 * 安装微信[3.6.0.18版本](https://115.com/s/sw6vkz733g3?password=d460)。
 
 ## 安装
-因为需要编译c++文件，可能会比较慢，可以加上-v查看进度
+因为需要编译c++文件，可能会比较慢，可以加上-v查看进度，这里使用清华镜像源下载依赖
 ```
-pip install . -v
+> pip install . -v -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ## 使用
-首先打开cmd命令行，启动微信服务端程序
+打开cmd命令行，启动微信服务端程序
 ```
 > weixin_server.exe --port1 10086 --port2 10010
 ```
