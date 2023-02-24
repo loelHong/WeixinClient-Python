@@ -4,7 +4,7 @@
 #include "pybind11/functional.h"
 
 namespace py = pybind11;
-PYBIND11_MODULE(WexinClient_Python, m) {
+PYBIND11_MODULE(weixin_client_python, m) {
 	pybind11::class_<Friend>(m, "Friend")
 		.def(py::init<>())
 		.def_readonly("wxid", &Friend::wxid)

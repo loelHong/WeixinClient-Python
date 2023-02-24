@@ -1,6 +1,6 @@
 import time, json, logging, threading, re
 from .log import set_logging
-from WexinClient_Python import WeixinClient
+from weixin_client_python import WeixinClient
 import xmltodict
 
 logger = logging.getLogger('wechat')
