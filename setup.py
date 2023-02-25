@@ -46,7 +46,6 @@ class CMakeBuild(build_ext):
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}",
             f"-DPYTHON_EXECUTABLE={sys.executable}",
             f"-DCMAKE_BUILD_TYPE={cfg}",  # not used on MSVC, but no harm
-            "-DPython=1",
             # f"-DCMAKE_TOOLCHAIN_FILE=C:\\workspace\\malimali\\WeixinRobot\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
         ]
         
@@ -94,7 +93,7 @@ class CMakeBuild(build_ext):
             # contain a backward-compatibility arch spec already in the
             # generator name.
             if not single_config and not contains_arch:
-                cmake_args += ["-A", PLAT_TO_CMAKE[self.plat_name]]
+                cmake_args += ["-G", "Visual Studio 15 2017", "-A", PLAT_TO_CMAKE[self.plat_name]]# windows 
 
             # Multi-config generators have a different way to specify configs
             if not single_config:
