@@ -1,5 +1,5 @@
 build
-wechat.egg-info
+weixin_helper.egg-info
 */**/__pycache__
 cmake-build-*
 .idea
