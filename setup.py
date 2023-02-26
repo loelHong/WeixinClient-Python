@@ -2,9 +2,9 @@ import os
 import re
 import subprocess
 import sys
-
 from setuptools import Extension, setup, find_packages
 from setuptools.command.build_ext import build_ext
+
 
 # Convert distutils Windows platform specifiers to CMake -A arguments
 PLAT_TO_CMAKE = {
@@ -22,7 +22,6 @@ class CMakeExtension(Extension):
     def __init__(self, name, sourcedir=""):
         Extension.__init__(self, name, sources=[])
         self.sourcedir = os.path.abspath(sourcedir)
-
 
 class CMakeBuild(build_ext):
     def build_extension(self, ext):
@@ -136,6 +135,7 @@ setup(
     ext_modules=[CMakeExtension("wechat")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
+    setup_requires=["pyzmq"],
     install_requires=["xmltodict==0.13.0"],
     extras_require={"test": ["pytest>=6.0"]},
     python_requires=">=3.6",

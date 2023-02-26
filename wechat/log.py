@@ -1,5 +1,4 @@
 import logging
-
 class LogSystem(object):
     handlerList = []
     showOnCmd = True
