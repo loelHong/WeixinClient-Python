@@ -16,9 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      with:
-        submodules: true
-
+  
     - name: Build SDist
       run: pipx run build --sdist
 
@@ -36,12 +34,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v3
-      with:
-        submodules: true
 
     - uses: pypa/cibuildwheel@v2.12.0
       env:
