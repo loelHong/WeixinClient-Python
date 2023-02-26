@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.14...3.21)
 project(weixin_client_python)
 
 set(CMAKE_CXX_STANDARD 14)
-#set(BUILD_STATIC ON)
 set(ZMQ_BUILD_TESTS OFF)
 set(MSGPACK_BUILD_TESTS OFF)
 set(MSGPACK_BUILD_DOCS OFF)
