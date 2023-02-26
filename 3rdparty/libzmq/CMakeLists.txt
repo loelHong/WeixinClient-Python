@@ -194,7 +194,7 @@ if(ENABLE_WS)
 
   message(STATUS "Enable WebSocket transport")
 
-  option(WITH_TLS "Use TLS for WSS support" ON)
+  option(WITH_TLS "Use TLS for WSS support" OFF)
   option(WITH_NSS "Use NSS instead of builtin sha1" OFF)
 
   if(WITH_TLS)
