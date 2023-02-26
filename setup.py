@@ -125,14 +125,14 @@ class CMakeBuild(build_ext):
 # The information here can also be placed in setup.cfg - better separation of
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
-    name="wechat",
+    name="weixin-helper",
     version="0.0.1",
     author="Dean Moldovan",
     author_email="dean0x7d@gmail.com",
     description="A test project using pybind11 and CMake",
     long_description="微信机器人sdk",
     packages=find_packages(),
-    ext_modules=[CMakeExtension("wechat")],
+    ext_modules=[CMakeExtension("weixin-helper")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     setup_requires=["pyzmq"],
