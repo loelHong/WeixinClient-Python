@@ -1,4 +1,4 @@
-from wechat import WechatHelper
+from wxchat import WechatHelper
 
 if __name__ == '__main__':
     helper = WechatHelper("192.168.0.107")
